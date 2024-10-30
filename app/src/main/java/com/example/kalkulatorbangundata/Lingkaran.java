@@ -31,13 +31,10 @@ public class Lingkaran extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
-
             Vjarijari = findViewById(R.id.jarijari);
             Vhasil = findViewById(R.id.hasil);
 
             rg = findViewById(R.id.radioGroup);
-
-
 
             btnHitung = findViewById(R.id.hitung);
             btnHapus = findViewById(R.id.clear);
@@ -51,11 +48,23 @@ public class Lingkaran extends AppCompatActivity {
                     hitung();
                 }
             });
+            btnHapus.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Vjarijari.setText("");
+                    Vhasil.setText("");
+                    rg.clearCheck();
+                }
+            });
     }
     private void hitung() {
 
-
         String Jari = Vjarijari.getText().toString();
+
+        if (Jari.isEmpty()) {
+            Vhasil.setText("Masukkan jari-jari!");
+            return;
+        }
         double jari = Double.parseDouble(Jari);
         int pilih = rg.getCheckedRadioButtonId();
         double hasil;
@@ -63,21 +72,14 @@ public class Lingkaran extends AppCompatActivity {
         if(pilih==btnLuas.getId()){
             //hitung luas
             hasil = Math.PI * jari * jari;
-                if (hasil == (int) hasil) {
-                    Vhasil.setText(String.valueOf((int) hasil));
-                } else {
-                    Vhasil.setText(String.valueOf(hasil));
-                }
+                    Vhasil.setText(String.format("%.2f",hasil));
 
         }else if (pilih==btnKeliling.getId()){
             //hitung keliling
             hasil = 2 * Math.PI * jari;
-            if (hasil == (int) hasil) {
-                Vhasil.setText(String.valueOf((int) hasil));
-            } else {
-                Vhasil.setText(String.valueOf(hasil));
-            }
-
+                Vhasil.setText(String.format("%.2f",hasil));
+        }else {
+            Vhasil.setText("Pilih opsi perhitungan!");
         }
 
 
