@@ -16,6 +16,9 @@
             android:name=".PersegiPanjang"
             android:exported="true" />
         <activity
+            android:name=".Persegi"
+            android:exported="true" />
+        <activity
             android:name=".Lingkaran"
             android:exported="false" />
         <activity

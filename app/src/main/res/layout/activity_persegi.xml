@@ -64,6 +64,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="numberDecimal"
+                android:minHeight="48dp"
                 android:text="" />
 
             <Button
@@ -97,7 +98,8 @@
                     android:layout_weight="1"
                     android:ems="10"
                     android:inputType="numberDecimal"
-                    android:text="" />
+                    android:text=""
+                    tools:ignore="TouchTargetSizeCheck" />
 
             </LinearLayout>
         </LinearLayout>
