@@ -30,7 +30,9 @@ public class MainActivity extends AppCompatActivity {
     }
     public void openPersegiPanjang(View view){
         Intent intent = new Intent(MainActivity.this, PersegiPanjang.class);
+        startActivity(intent);
     }
+
 
 
 }
