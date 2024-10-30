@@ -1,6 +1,7 @@
 package com.example.kalkulatorbangundata;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -8,6 +9,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -24,17 +26,15 @@ public class Lingkaran extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_lingkaran);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
 
             Vjarijari = findViewById(R.id.jarijari);
             Vhasil = findViewById(R.id.hasil);
 
             rg = findViewById(R.id.radioGroup);
-
-
 
             btnHitung = findViewById(R.id.hitung);
             btnHapus = findViewById(R.id.clear);
@@ -42,27 +42,47 @@ public class Lingkaran extends AppCompatActivity {
             btnLuas = findViewById(R.id.luas);
             btnKeliling = findViewById(R.id.keliling);
 
-
-        });
+            btnHitung.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    hitung();
+                }
+            });
+            btnHapus.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Vjarijari.setText("");
+                    Vhasil.setText("");
+                    rg.clearCheck();
+                }
+            });
     }
-
-    private void LuasLingkaran(){
+    private void hitung() {
 
         String Jari = Vjarijari.getText().toString();
 
-        if(Jari.isEmpty()){
-            Toast.makeText(this, "Isi Panjang jari jari lingkaran !", Toast.LENGTH_SHORT).show();
-        }else{
-            double Jari = Double.parseDouble(Jari);
+        if (Jari.isEmpty()) {
+            Vhasil.setText("Masukkan jari-jari!");
+            return;
+        }
+        double jari = Double.parseDouble(Jari);
+        int pilih = rg.getCheckedRadioButtonId();
+        double hasil;
 
-            double hasil = 3.14 * (Jari * Jari);
+        if(pilih==btnLuas.getId()){
+            //hitung luas
+            hasil = Math.PI * jari * jari;
+                    Vhasil.setText(String.format("%.2f",hasil));
 
-            if (hasil==(int)hasil){
-                Vhasil.setText(String.valueOf((int)hasil));
-            }else{
-                Vhasil.setText(String.valueOf(hasil));
+        }else if (pilih==btnKeliling.getId()){
+            //hitung keliling
+            hasil = 2 * Math.PI * jari;
+                Vhasil.setText(String.format("%.2f",hasil));
+        }else {
+            Vhasil.setText("Pilih opsi perhitungan!");
+        }
 
-            }
+
+
         }
     }
-}

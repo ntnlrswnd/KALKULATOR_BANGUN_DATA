@@ -37,25 +37,27 @@
             android:layout_marginTop="20dp"
             android:orientation="vertical">
 
-            <RadioButton
-                android:id="@+id/luas"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:text="Luas Lingkaran" />
-
             <RadioGroup
                 android:id="@+id/radioGroup"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent">
 
-            <RadioButton
-                android:id="@+id/keliling"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="-10dp"
-                android:text="Keliling Lingkaran" />
+                <RadioButton
+                    android:id="@+id/luas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="Luas Lingkaran" />
+
+                <RadioButton
+                    android:id="@+id/keliling"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="-10dp"
+                    android:text="Keliling Lingkaran" />
+
+            </RadioGroup>
 
             <LinearLayout
                 android:layout_width="match_parent"
