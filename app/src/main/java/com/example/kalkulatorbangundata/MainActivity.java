@@ -28,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, Lingkaran.class);
         startActivity(intent);
     }
+    public void openpersegi(View view) {
+        Intent intent = new Intent(MainActivity.this, Persegi.class);
+        startActivity(intent);
+    }
 
 
 
