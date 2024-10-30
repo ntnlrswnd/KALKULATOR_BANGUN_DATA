@@ -1,6 +1,7 @@
 package com.example.kalkulatorbangundata;
 
 import android.os.Bundle;
+import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +10,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class PersegiPanjang extends AppCompatActivity {
+
+    private EditText txtPanjang, txtLebar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
