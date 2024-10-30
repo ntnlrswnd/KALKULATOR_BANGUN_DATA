@@ -27,16 +27,12 @@ public class segitiga extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-
         txtAlas = findViewById(R.id.alas);
         txtTinggi = findViewById(R.id.tinggi);
         txtHasil = findViewById(R.id.hasil);
 
         btnHitung = findViewById(R.id.button);
         btnHapus = findViewById(R.id.hapus);
-
-
-
 
         btnHitung.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,8 +48,6 @@ public class segitiga extends AppCompatActivity {
                  txtHasil.setText("");
              }
          });
-
-
     }
 
     @Override
@@ -66,7 +60,6 @@ public class segitiga extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
 
     private void hitungLuas(){
 
@@ -90,9 +83,6 @@ public class segitiga extends AppCompatActivity {
             }
 
         }
-
-
-
 
     }
 
