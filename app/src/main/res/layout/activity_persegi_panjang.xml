@@ -33,7 +33,7 @@
         android:layout_marginHorizontal="5dp"
         android:background=""
         android:padding="10dp"
-         android:textColor="@android:color/white"/>
+        android:textColor="@android:color/white"/>
 
 
 
