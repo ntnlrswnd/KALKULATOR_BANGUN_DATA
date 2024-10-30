@@ -41,14 +41,16 @@
 
             <Button
                 android:id="@+id/button2"
+                style="@android:style/Widget.DeviceDefault.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="SEGITIGA"
-                android:onClick="opensegitiga"/>
+                android:onClick="opensegitiga"
+                android:text="SEGITIGA" />
 
             <Button
                 android:id="@+id/button3"
+                style="@android:style/Widget.DeviceDefault.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -64,6 +66,7 @@
 
             <Button
                 android:id="@+id/button4"
+                style="@android:style/Widget.DeviceDefault.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -71,6 +74,7 @@
 
             <Button
                 android:id="@+id/button5"
+                style="@android:style/Widget.DeviceDefault.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
